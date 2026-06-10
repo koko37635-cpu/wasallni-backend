@@ -7,6 +7,7 @@ import { Server } from 'socket.io';
 import authRoutes from './routes/auth';
 import shipmentRoutes from './routes/shipments';
 import accountingRoutes from './routes/accounting';
+import restaurantRoutes from './routes/restaurants';
 import { initDB } from './db';
 
 dotenv.config();
@@ -30,6 +31,7 @@ initDB();
 app.use('/api/auth', authRoutes);
 app.use('/api/shipments', shipmentRoutes);
 app.use('/api/accounting', accountingRoutes);
+app.use('/api/restaurants', restaurantRoutes);  // <-- أضف هذا
 
 // Health check
 app.get('/api/health', (req: Request, res: Response) => {
